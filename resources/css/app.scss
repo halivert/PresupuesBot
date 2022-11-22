@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+$family-sans-serif: "actor", sans-serif;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+@import "../../node_modules/bulma/bulma.sass";
+
+html {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
