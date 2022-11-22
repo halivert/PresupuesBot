@@ -14,5 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return auth()->guard()->user() ? to_route('home') : to_route('login');
+})->name('welcome');
+
+Route::group([
+    'namespace' => '\App\Http\Controllers',
+], function () {
+    Route::get('/login/callback', 'LoginCallbackController@store')
+        ->name('login.callback');
+});
+
+Route::group([
+    'namespace' => '\App\Http\Controllers',
+    'middleware' => 'auth',
+], function () {
+    Route::controller('HomeController')->group(function () {
+        Route::get('/home', 'index')->name('home');
+    });
 });

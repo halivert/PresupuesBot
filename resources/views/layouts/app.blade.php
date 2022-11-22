@@ -13,6 +13,8 @@
     </head>
     <body>
         <div id="app">
+            <x-navbar></x-navbar>
+
             {{ $slot }}
         </div>
     </body>
