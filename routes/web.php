@@ -30,5 +30,6 @@ Route::group([
 ], function () {
     Route::controller('HomeController')->group(function () {
         Route::get('/home', 'index')->name('home');
+        Route::get('/profile', 'profile')->name('profile');
     });
 });

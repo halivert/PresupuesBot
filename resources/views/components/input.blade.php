@@ -11,7 +11,7 @@
           'name' => $name,
           'id' => $name,
           'placeholder' => $placeholder,
-          'value' => old($name),
+          'value' => old($name, $value),
       ]) }}
     >
   </div>

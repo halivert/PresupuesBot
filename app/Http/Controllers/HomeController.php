@@ -12,4 +12,11 @@ class HomeController extends Controller
 
         return view('home', compact('currentUser'));
     }
+
+    public function profile(Request $request)
+    {
+        $currentUser = auth()->guard()->user();
+
+        return view('profile', compact('currentUser'));
+    }
 }

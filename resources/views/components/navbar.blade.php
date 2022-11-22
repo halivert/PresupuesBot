@@ -42,6 +42,13 @@
         >
           @lang('Inicio')
         </a>
+
+        <a
+          class="navbar-item"
+          href="{{ route('profile') }}"
+        >
+          @lang('Perfil')
+        </a>
       </div>
     @endauth
 
@@ -67,6 +74,12 @@
               href="{{ route('login') }}"
             >
               @lang('Iniciar sesión')
+            </a>
+            <a
+              class="button is-info"
+              href="{{ route('register') }}"
+            >
+              @lang('Registrarse')
             </a>
           @endauth
         </div>

@@ -14,7 +14,8 @@ class Input extends Component
     public function __construct(
         public string $name,
         public string $label = '',
-        public string $placeholder = ''
+        public string $placeholder = '',
+        public string $value = '',
     ) {
         $this->label = __("inputs.$name");
     }
