@@ -12,15 +12,21 @@
 
         <x-input name="email"></x-input>
 
-        <x-input
-          name="password"
-          type="password"
-        ></x-input>
+        <div class="columns">
+          <div class="column">
+            <x-input
+              name="password"
+              type="password"
+            ></x-input>
+          </div>
 
-        <x-input
-          name="password_confirmation"
-          type="password"
-        ></x-input>
+          <div class="column">
+            <x-input
+              name="password_confirmation"
+              type="password"
+            ></x-input>
+          </div>
+        </div>
 
         <div class="buttons is-right">
           <button class="button is-primary">@lang('Registrarse')</button>

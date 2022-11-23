@@ -1,3 +1,7 @@
+@aware([
+    'model' => null,
+])
+
 <div class="field">
   <label
     class="label is-capitalized"
@@ -11,7 +15,7 @@
           'name' => $name,
           'id' => $name,
           'placeholder' => $placeholder,
-          'value' => old($name, $value),
+          'value' => old($name, $model?->$name) ?: null,
       ]) }}
     >
   </div>

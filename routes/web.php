@@ -30,6 +30,15 @@ Route::group([
 ], function () {
     Route::controller('HomeController')->group(function () {
         Route::get('/home', 'index')->name('home');
-        Route::get('/profile', 'profile')->name('profile');
+    });
+
+    Route::get(
+        '/telegram/link',
+        'LoginCallbackController@update'
+    )->name('telegram.link');
+
+    Route::controller('ProfileController')->group(function () {
+        Route::get('/profile', 'view')->name('profile');
+        Route::get('/profile/edit', 'edit')->name('profile.edit');
     });
 });

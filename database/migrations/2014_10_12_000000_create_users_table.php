@@ -21,7 +21,6 @@ return new class extends Migration
 
             $table->integer('subscription')->default(0);
             $table->string('username')->unique()->nullable();
-            $table->string('display_name')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
