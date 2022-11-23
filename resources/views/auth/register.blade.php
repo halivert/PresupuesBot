@@ -29,7 +29,7 @@
         </div>
 
         <div class="buttons is-right">
-          <button class="button is-primary">@lang('Registrarse')</button>
+          <x-form.submit>@lang('Registrarse')</x-form.submit>
         </div>
       </x-form>
     </div>

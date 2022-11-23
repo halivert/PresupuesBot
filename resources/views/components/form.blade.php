@@ -15,7 +15,7 @@
 
   <fieldset
     {{ $attributes->only('v-scope')->merge([
-        'class' => implode(' ', [$attributes->get('fieldset-class'), 'min-w-0']),
+        'class' => implode(' ', [$attributes->get('fieldset-class')]),
         'disabled' => $attributes->get('fieldset-disabled'),
         ':disabled' => $attributes->get(':fieldset-disabled'),
     ]) }}

@@ -18,7 +18,7 @@
         </div>
 
         <div class="buttons is-right">
-          <button class="button is-primary">@lang('Guardar')</button>
+            <x-form.submit></x-form.submit>
         </div>
       </x-form>
     </div>
