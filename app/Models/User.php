@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -47,4 +48,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'subscription' => Subscription::class,
     ];
+
+
+    public function getAvatarAttribute(): string
+    {
+        $baseUrl = 'https://www.gravatar.com/avatar/';
+
+        return $baseUrl . md5(Str::lower($this->email)) . '?s=200&d=identicon';
+    }
 }

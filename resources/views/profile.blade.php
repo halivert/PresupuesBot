@@ -6,6 +6,20 @@
           <h1 class="title is-3">
             {{ $currentUser->name }}
           </h1>
+
+          <a
+            href="https://es.gravatar.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <figure class="image is-128x128">
+              <img
+                class="is-rounded"
+                src="{{ $currentUser->avatar }}"
+                title="@lang('Imagen de gravatar')"
+              />
+            </figure>
+          </a>
         </div>
 
         <div class="column is-3">
