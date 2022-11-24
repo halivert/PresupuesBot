@@ -51,12 +51,12 @@ return [
     // 'exists' => 'The selected :attribute is invalid.',
     // 'file' => 'The :attribute must be a file.',
     // 'filled' => 'The :attribute field must have a value.',
-    // 'gt' => [
+    'gt' => [
     //     'array' => 'The :attribute must have more than :value items.',
     //     'file' => 'The :attribute must be greater than :value kilobytes.',
-    //     'numeric' => 'The :attribute must be greater than :value.',
+        'numeric' => 'El valor de :attribute debe ser mayor que :value.',
     //     'string' => 'The :attribute must be greater than :value characters.',
-    // ],
+    ],
     // 'gte' => [
     //     'array' => 'The :attribute must have :value items or more.',
     //     'file' => 'The :attribute must be greater than or equal to :value kilobytes.',
@@ -84,21 +84,21 @@ return [
     //     'string' => 'The :attribute must be less than or equal to :value characters.',
     // ],
     // 'mac_address' => 'The :attribute must be a valid MAC address.',
-    // 'max' => [
-    //     'array' => 'The :attribute must not have more than :max items.',
-    //     'file' => 'The :attribute must not be greater than :max kilobytes.',
-    //     'numeric' => 'The :attribute must not be greater than :max.',
-    //     'string' => 'The :attribute must not be greater than :max characters.',
-    // ],
+    'max' => [
+        // 'array' => 'The :attribute must not have more than :max items.',
+        // 'file' => 'The :attribute must not be greater than :max kilobytes.',
+        'numeric' => 'El valor de :attribute no debe ser mayor a :max.',
+        // 'string' => 'The :attribute must not be greater than :max characters.',
+    ],
     // 'max_digits' => 'The :attribute must not have more than :max digits.',
     // 'mimes' => 'The :attribute must be a file of type: :values.',
     // 'mimetypes' => 'The :attribute must be a file of type: :values.',
-    // 'min' => [
+    'min' => [
     //     'array' => 'The :attribute must have at least :min items.',
     //     'file' => 'The :attribute must be at least :min kilobytes.',
-    //     'numeric' => 'The :attribute must be at least :min.',
+        'numeric' => 'El valor de :attribute debe ser al menos :min.',
     //     'string' => 'The :attribute must be at least :min characters.',
-    // ],
+    ],
     // 'min_digits' => 'The :attribute must have at least :min digits.',
     // 'multiple_of' => 'The :attribute must be a multiple of :value.',
     // 'not_in' => 'The selected :attribute is invalid.',

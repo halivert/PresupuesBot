@@ -6,6 +6,7 @@ namespace App\Models;
 use App\Enums\Subscription;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
@@ -49,6 +50,10 @@ class User extends Authenticatable
         'subscription' => Subscription::class,
     ];
 
+    public function cards(): HasMany
+    {
+        return $this->hasMany(Card::class);
+    }
 
     public function getAvatarAttribute(): string
     {

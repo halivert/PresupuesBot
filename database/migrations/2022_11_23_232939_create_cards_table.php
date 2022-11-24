@@ -13,18 +13,17 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('cards', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('name');
-            $table->string('telegram_id')->unique()->nullable();
-            $table->string('email')->unique()->nullable();
+            $table->foreignUuid('user_id')->constrained()->cascadeOnDelete();
 
-            $table->integer('subscription')->default(0);
-            $table->string('username')->unique()->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->string('name');
+            $table->integer('closing_date');
+            $table->integer('payment_due_date')->nullable();
+            $table->integer('credit_limit')->nullable();
+
             $table->timestamps(3);
+            $table->index(['id', 'user_id']);
         });
     }
 
@@ -35,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('cards');
     }
 };

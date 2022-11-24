@@ -41,4 +41,7 @@ Route::group([
         Route::get('/profile', 'view')->name('profile');
         Route::get('/profile/edit', 'edit')->name('profile.edit');
     });
+
+    Route::resource('cards', 'CardController')
+        ->only(['create', 'store', 'edit', 'update', 'destroy']);
 });

@@ -10,6 +10,11 @@ class HomeController extends Controller
     {
         $currentUser = auth()->guard()->user();
 
-        return view('home', compact('currentUser'));
+        $cards = $currentUser->cards;
+
+        return view('home', compact(
+            'currentUser',
+            'cards',
+        ));
     }
 }
