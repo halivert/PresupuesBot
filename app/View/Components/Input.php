@@ -16,6 +16,7 @@ class Input extends Component
         public string $label = '',
         public string $placeholder = '',
         public string $value = '',
+        public bool $required = false,
     ) {
         $this->label = __("inputs.$name");
     }

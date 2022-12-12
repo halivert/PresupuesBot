@@ -2,10 +2,40 @@
   <main class="section">
     <div class="container">
       <h1 class="title is-3">
-        Hola {{ $currentUser->name }}
+        @lang('Hola :0', [$currentUser->name])
       </h1>
 
       <div class="columns">
+        <div
+          class="column"
+          v-scope
+          v-cloak
+        >
+          @foreach ($cards as $card)
+            <x-notification no-close>
+              <h1 class="title is-5 mb-2">
+                {{ $card->name }}
+              </h1>
+
+              <p>
+                <strong>
+                  @lang('Fecha de corte'):
+                  {{ $card->closing_date }}
+                </strong>
+              </p>
+
+              <p>
+                @lang('Límite de pago'):
+                {{ $card->payment_due_date }}
+              </p>
+
+              <p>
+                {{ $card->credit_limit }}
+              </p>
+            </x-notification>
+          @endforeach
+        </div>
+
         <div
           class="column is-half"
           v-scope="{creating: false}"

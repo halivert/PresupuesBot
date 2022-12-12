@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCardRequest;
 use App\Http\Requests\UpdateCardRequest;
 use App\Models\Card;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 
 class CardController extends Controller
 {
@@ -29,9 +31,20 @@ class CardController extends Controller
      * @param  \App\Http\Requests\StoreCardRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreCardRequest $request)
-    {
-        //
+    public function store(
+        StoreCardRequest $request
+    ): RedirectResponse | JsonResponse {
+        $attrs = $request->validated();
+
+        $user = $request->user();
+
+        $card = $user->cards()->create($attrs);
+
+        return $request->wantsJson()
+            ? response()->json($card, 201)
+            : redirect()->back()->with([
+                'status' => __('Tarjeta añadida!')
+            ]);
     }
 
     /**

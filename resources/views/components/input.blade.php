@@ -4,7 +4,7 @@
 
 <div class="field">
   <label
-    class="label is-capitalized"
+    class="label is-capitalized {{ $required ? 'required' : '' }}"
     for="{{ $name }}"
   >{{ $label }}</label>
   <div class="control">
@@ -16,6 +16,7 @@
           'id' => $name,
           'placeholder' => $placeholder,
           'value' => old($name, $model?->$name) ?: null,
+          'required' => $required,
       ]) }}
     >
   </div>

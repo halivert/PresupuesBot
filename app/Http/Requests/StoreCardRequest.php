@@ -4,7 +4,6 @@ namespace App\Http\Requests;
 
 use App\Models\Card;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
 class StoreCardRequest extends FormRequest
 {
@@ -13,7 +12,7 @@ class StoreCardRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return $this->user()->can('create', Card::class);
     }
@@ -23,17 +22,12 @@ class StoreCardRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'name' => 'string|required',
             'closing_date' => 'integer|required|min:1|max:28',
-            'payment_due_date' => [
-                'integer',
-                'nullable',
-                'max:28',
-                "min:$this->closing_date",
-            ],
+            'payment_due_date' => 'integer|nullable||min:1',
             'credit_limit' => 'integer|nullable',
         ];
     }
